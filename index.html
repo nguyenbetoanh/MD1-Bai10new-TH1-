@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            padding-top: 50px
+        }
+    </style>
+</head>
+<body>
+<!--Viết một chương trình JavaScript để thêm vào các phần tử trong một mảng và hiển thị chúng.-->
+
+<label>Hãy nhập các mảng bạn muốn</label>
+<input id="nhap" type="text"> <br> <br>
+<button onclick="guiThongTin()"> Add</button>
+<button onclick="hienThi()"> Display</button>
+<h1 id="ht"></h1>
+<script>
+    let x = 0;
+    let array = Array();
+
+    function guiThongTin() {
+        array[x] = document.getElementById('nhap').value;
+        alert('Phần tử ' + array[x] + 'được lưu ở ' + x)
+        x++;
+        document.getElementById('nhap').value = "";
+    }
+
+    function hienThi() {
+        let e = "<hr/>"
+        for (let i = 0; i < array.length; i++) {
+            e += "phần tử " + i + "=" + array[i] + "<br/>"
+        }
+        document.getElementById('ht').innerHTML = e
+    }
+
+</script>
+</body>
+</html>
